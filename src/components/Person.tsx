@@ -1,10 +1,16 @@
 type Props = {
     name: string;
-    avatar: string;
+    avatar?: string;
     roles: string[];
 }
 
-export const Person = ({ name, avatar, roles }: Props) => {
+const standardAvatar = 'https://static.vecteezy.com/ti/vetor-gratis/p1/9292244-default-avatar-icon-vector-of-social-media-user-vetor.jpg';
+
+export const Person = ({ 
+    name, 
+    avatar = standardAvatar, 
+    roles 
+}: Props) => {
     const today = new Date();
     return (
         <div className="p-3">
