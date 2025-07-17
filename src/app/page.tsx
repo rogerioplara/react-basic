@@ -1,33 +1,13 @@
-import { peopleList } from '@/data/peopleList';
+import { GradeTable } from '@/components/StudentTable';
+import { students } from '@/data/students';
 
 const Page = () => {
-  
-  const chemists = peopleList.filter(person => person.profession === 'chemist');
-
   return (
-    <div>
-      <h1 className="font-bold text-2xl">Olá mundo</h1>
-      <h3>Algum outro texto</h3>
-
-      {peopleList.length > 0 &&
-        <ul>
-          {peopleList.map(person => 
-            <li key={person.id}>{person.name} - {person.profession}</li>
-          )}
-        </ul>
-      }
-
-      {chemists.length > 0 &&
-        <>
-          <h3>Químicos:</h3>
-          <ul>
-            {chemists.map(person =>
-              <li key={person.id}>{person.name}</li>
-            )}
-          </ul>
-        </>
-      }
-      
+    <div className='w-screen h-screen flex flex-col justify-center items-center text-black
+    bg-gradient-to-r from-sky-500 to-indigo-500'>
+      <GradeTable 
+        list={students}
+      />
     </div>
   );
 }
